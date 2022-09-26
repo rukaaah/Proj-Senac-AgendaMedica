@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffebcd;
+}
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;          /* distancia da borda com os elementos */
+    border-radius: 15px;    /* pontas da borda arredondada */
+    width: 25%;             /* largura */
+    justify-content: center;
+    box-shadow: 0 0 20px 0 darkgrey;
+}
+fieldset {                  /* fieldset é a linha ao redor */
+    border: 3px solid dodgerblue;
+}
+legend {
+    border: 1px solid dodgerblue;
+    padding: 10px;
+    text-align: center;
+    background: dodgerblue;
+    border-radius: 8px;
+    color:rgb(255, 255, 255);
+}
+.inputBox {
+    position: relative;
+}
+.inputUser {
+    background: none;
+    border: none; 
+    border-bottom: 1px solid deepskyblue; /* cria uma linha embaixo dos campos */
+    outline: none;                    /* ao selecionar o campo, não fica marcando o quadro todo */
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;              /* espaço entre os caracteres que serão digitados nos campos */
+}
+.inputLabel {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputUser:focus ~ .inputLabel,     /* quando focar nos campos, quero que execute uma ação (~) nos labels */
+.inputUser:valid ~ .inputLabel {    /* quando ela estiver válida (preenchida), a ação se mantém */
+    top: -20px;
+    font-size: 12px;
+    color: dodgerblue;
+}
+.inputSelect {             
+    border: none;
+    padding: 6px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+#submit {                           /* hastag para chamar pelo ID; ponto para chamar pela CLASS */
+    background-color: dodgerblue;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: aqua;
+    font-size: 15px;
+    border-radius: 10px;
+}
+#submit:hover {        /* mudanças ao posicionar o cursor sobre */
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+.olho-senha {
+    position: absolute;
+    top: -13px;
+    right: 10px;
+    cursor: pointer;
+    color:gray;
+    font-size: 25px;
+}
+@media (max-width: 800px){
+    .wrapper {
+        min-width: 100%;
+        border-radius: 15px;
+    }
+}

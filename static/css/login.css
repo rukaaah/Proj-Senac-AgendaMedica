@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, cyan, #ffebcd);
+}
+
+.quadro-login {
+    background-color: rgba(255, 255, 255, 0.8); /* fundo com transparencia nivel 0.8 */
+    position: absolute;                 /* ocupa o espaço dos elementos, do texto */
+    top: 50%;                           /* abaixar */
+    left: 50%;                          /* para os lados */
+    transform: translate(-50%,-50%);    /* centralizar de acordo com o tamanho da pagina */
+    padding: 80px;                      /* distância entre os elementos e a borda */
+    border-radius: 15px;                /* arredondar as bordas */
+    box-shadow: 0 0 20px 0 darkgrey;
+} 
+
+.input-login {
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.botao-login {
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: aqua;
+    font-size: 15px;
+}
+.botao-login:hover {        /* mudanças ao posicionar o cursor sobre */
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+.olho-senha {
+    position: absolute;
+    top: 228px;
+    right: 90px;
+    cursor: pointer;
+    color:gray;
+    font-size: 25px;
+}

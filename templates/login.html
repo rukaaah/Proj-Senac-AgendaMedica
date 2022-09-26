@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA - Login</title>
+    <link rel="stylesheet" href="../static/css/login.css"></link>
+</head>
+<body>
+    <div class="quadro-login">
+        <h1>Bem-vindo(a)!</h1>
+        <form action="{{ url_for('login') }}" method="POST">
+            <input type="text" class="input-login" name="email" id="email" placeholder="Email">
+            <br><br>                                                            <!-- (duas) quebras de linhas -->
+            <input type="password" class="input-login" name="senha" id="senha" placeholder="Senha">
+            <span class="olho-senha">&#x1F441;</span>
+            <script>                                             /* script do olho de visualizar senha */
+                let btn = document.querySelector('.olho-senha');
+                btn.addEventListener('click', function() {
+                
+                    let input = document.querySelector('#senha');
+                
+                    if(input.getAttribute('type') == 'password') {
+                        input.setAttribute('type', 'text');
+                    } else {
+                        input.setAttribute('type', 'password');
+                    }
+                
+                });
+                </script>
+            <br><br>
+            <input class="botao-login" type="submit" name="submit" value="Entrar">
+            <br><h6><b>____________________________________</b></h6><br>
+        </form>
+        <form action="/cadastro">
+            <button class="botao-login">Cadastrar-se</button>
+            
+            <!--<input class="botao-login" type="submit" name="submit" value="Cadastrar-se">
+            SUBMITAR dá conflito com python pois ele espera dados para serem enviados a algum lugar (como no caso de login - nome e senha)-->
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA - Admin</title>
+    <link rel="stylesheet" href="../static/css/index_dono.css">
+</head>
+<body>
+    <div class="quadro-admin">
+        <h1>Restrições</h1>
+
+        <form action="{{ url_for('home') }}" method="POST">
+            <select name="user" id="lista_medico" class="inputSelect">
+                <option value="" data-default disabled selected>Médicos...</option>
+                {}         <!-- ATRIBUIR NESTE VALUE COMUNICAÇÃO COM PYTHON ??? -->
+            </select>
+
+            <br><br>   
+
+            <input class="botao-alterar" type="submit" name="submit" value="Alterar">
+            
+            <div class="info" style="text-align:center">
+                <h1><b>⇅</h1></b>           
+            </div>
+
+            <select name="med" id="lista_paciente" class="inputSelect">
+                <option value="" data-default disabled selected>Pacientes...</option>
+                {}          <!-- ATRIBUIR NESTE VALUE COMUNICAÇÃO COM PYTHON ??? -->
+            </select>
+
+            <br><br>   
+
+            <input class="botao-alterar" type="submit" name="inputmed" value="Alterar" onclick="this.value = 'AIterar'">
+
+            <br><br>
+
+            <div data-tooltip="Altera MÉDICOS para categoria PACIENTE e vice-versa"><h6>[?]</h6></div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA - Administrar consultas</title>
+    <link rel="stylesheet" href="../static/css/consultas.css"></link>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="buttonsForm">
+            <div class="btnColor"></div>
+            <button id="btnAgendar" aria-selected="true">Agendar</button>
+            <button id="btnDesmarcar">Desmarcar</button>
+        </div>
+
+        <form id="agendar" action="{{ url_for('delete') }}" method="POST">    <!-- necessário este elemento como action para se comunicar com o python-->
+            <br>
+
+            Selecionar paciente: 
+            <select name="paciente" id="paciente" class="inputSelect" required>
+                <option value="" data-default disabled selected></option>
+                {} <!-- ATRIBUIR NESTE VALUE COMUNICAÇÃO COM PYTHON ??? -->
+            </select>
+            <br><br><br>
+
+            Nome da consulta:
+            <div class="inputBox">
+                <input type="text" name="nome_evento" id="nome_consulta" class="inputUser" required>
+                <label for="nome_evento" class="inputLabel"></label>
+            </div>
+            <br><br>
+
+            <label for="data_consulta">Data da consulta:</label>
+            <input type="date" name="data_evento" id="data_consulta" class="inputSelect" required>
+            <br><br><br>
+
+            <label for="hora_consulta">Hora da consulta:</label>
+            <input type="time" name="hora_evento" id="hora_consulta" class="inputSelect" required>
+            <br><br><br>
+
+            <div class="inputBox">
+                <label for="nome_consulta" class="inputLabel">OBS.:</label><br>
+                <textarea name="detalhe_evento" class="inputUser" maxlength="255" rows="4" placeholder="Recados e observações para o paciente..."></textarea>
+            </div>
+
+            <input name="submitdel" type="submit" id="submit" onclick="this.value = '0K'" value="OK">
+
+        </form>
+
+        <form id="desmarcar" action="{{ url_for('delete') }}" method="POST">    <!-- necessário este elemento como action para se comunicar com o python-->
+            <br>
+
+            <label for="data_consulta">Data da consulta:</label>
+            <input type="date" name="data_consulta" id="data_consulta" class="inputSelect" required>
+            <br><br><br>
+
+            Selecionar consulta: 
+            <select name="paciente" id="paciente" class="inputSelect" required>
+                <option value="" data-default disabled selected></option>
+                <option value=""></option> <!-- ATRIBUIR NESTE VALUE COMUNICAÇÃO COM PYTHON ??? -->
+            </select>
+            <br><br><br>
+
+            <button type="submit" id="submit">OK</button>
+
+        </form>
+    </div>
+    <script src="../static/js/consultas.js"></script>
+</body>
+</html>

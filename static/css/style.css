@@ -1,0 +1,564 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.formpac{
+    background-color: red;
+}
+body{
+    background-color: blanchedalmond;
+}
+
+.cadpac{
+    font-size: 0.8vw;
+    position: absolute;
+    left: 12%;
+    height: 2vw;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cadpac input{
+    height: 2vh;
+    width: 2vw;
+}
+.cadpac #obsevento{
+    top: 5%;
+    position: absolute;
+}
+.cadpac input#cad{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2vh;
+    width: 5vw;
+}
+
+div .header{
+    top: 0;
+    position: absolute;
+    background-color: rgb(29, 29, 29);
+    width: 100%;
+    height: 5%;
+    color: white;
+    font-size: 3.5vh;
+    line-height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: black solid 2px;
+}
+.header #datahoje{
+    position: absolute;
+    top: 17px;
+    margin-left: 10px;
+}
+footer{
+    background-color: rgb(29, 29, 29);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    border-top: black solid 2px;
+}
+footer input{
+    top: 15px;
+}
+footer .logout{
+    position: absolute;
+    right: 2px;
+}
+footer .delete{
+    position: absolute;
+    left: 2px;
+    top: 15px;
+}
+.agenda{
+
+    height: max-content;
+    background-color: rebeccapurple;
+}
+.data{
+    position: absolute;
+    font-size: 3.5vw;
+    top: 10vh;
+    margin-top: 1vw;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: none;
+}
+.l1{
+    margin-left: 0vw;
+    font-size: 2.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -90px;
+}
+.l1 .obs{
+    right: 40vw;
+    position: absolute;
+    margin-top: -5%;
+}
+.l1 .obsdiv{
+    position: absolute;
+
+    right: 16.7vw;
+    width: 23vw;
+    height: 80px;
+    margin-top: -8.4vh;
+}
+.l2{
+    margin-left: 0vw;
+    font-size: 2.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.9%;
+}
+.l2 .obs{
+    right: 40vw;
+    position: absolute;
+    margin-top: -8.4%;
+}
+.l2 .obsdiv{
+    position: absolute;
+    right: 16.7vw;
+    width: 23vw;
+    height: 80px;
+    margin-top: -8.4vh;
+}
+.l3{
+    margin-left: -10%;
+    font-size: 2.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:13px;
+
+}
+.l3 .obs{
+    right: 40vw;
+    position: absolute;
+    margin-top: -8.4%;
+}
+.l3 .obsdiv{
+    position: absolute;
+    right: 16.7vw;
+    width: 23vw;
+    height: 80px;
+    margin-top: -8.4vh;
+
+}
+.lfinal{
+    margin-left: -10%;
+    font-size: 2.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+    background-color: none;
+}
+.lfinal .obs{
+    right: 40vw;
+    position: absolute;
+    margin-top: -85px;
+}
+.lfinal .obsdiv{
+    position: absolute;
+    right: 16.7vw;
+    width: 23vw;
+    height: 9vh;
+    margin-top: -85px;
+
+}
+.obstam{
+    width: fit-content;
+    height: 80px;
+    font-size: 2vh;
+    position: absolute;
+    resize: none;
+    border: none;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    outline: none;
+}
+.linhaf{
+    position: absolute;
+}
+.espac{
+    height: 150px;
+}
+
+.linha{
+    position: absolute;
+    width: 90%;
+    right: 0;
+    height: 1px;
+    background-color: wheat;
+    top: calc(10% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.linha2{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: wheat;
+    top: calc(20% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.linha3{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: wheat;
+    top: calc(30% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.linha4{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: wheat;
+    top: calc(40% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+.linha5{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: wheat;
+    top: calc(50% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.linha6{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: wheat;
+    top: calc(60% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.linha7{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: wheat;
+    top: calc(70% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+.linha8{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: none;
+    top: calc(80% + 50px);
+    border: black dotted 2px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+@media (max-width: 1243px){
+    @keyframes down{
+        from{
+            height: 0px;
+
+        }
+        to{
+            height: 80px;
+        }
+    }
+    .data{
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border-left: 1px gray solid;
+        border-top: 1px gray solid;
+        border-bottom: 1px gray solid;
+        right: 0;
+        top: 5%;
+        font-size: 200%;
+    }
+    .linha{
+        width: 100%;
+    }
+    .linha2{
+        margin-left: 0;
+    }
+    .l3{
+        margin-left: 0;
+    }
+    .lfinal{
+        margin-left: 0;
+    }
+    .obsdiv{
+        display: none;
+        background-color: white;
+        border: 1px solid black;
+    }
+    .hide{
+        display: block;
+        animation: down;
+        animation-duration: 2s;
+    }
+    .obstam{
+        animation: down;
+        animation-duration: 2s;
+    }
+
+
+    .obs{
+        background-color: white;
+        border-radius: 10px;
+        border: gray 1px solid;
+        width: 65px;
+    }
+    .l3 .obs{
+        margin-top: -80px;
+    }
+    
+    .obs::before{
+    border-color: black;
+    border-style: solid;
+    border-width: 0 0 3px 3px;
+    content: "";
+    display: block;
+    height: 6px;
+    left: 52.5px;
+    position: absolute;
+    width: 6px;
+    transform: rotate( 45deg );
+    /* These two lines vertically centre the point of the arrow */
+    margin-top: 3px;
+    top: 50%;
+
+    /* The arrow sprints to the left when the link is hovered */
+
+    transform: rotate( 360deg );
+    -webkit-transform: rotate( -45deg );
+    }
+    .obs::after{
+        background: black;
+        content: "";
+        display: block;
+        height: 3px;
+        left: 47.6px;
+        position: absolute;
+        top: 51.201%;
+        width: 19px;
+        transform: rotate( 90deg );
+        /* We need to animate the shaft too, to be able to look at a moving arrow */
+    }
+}
+@media (max-height:1605px){
+    .l1{
+        margin-top: -120px;
+    }
+    .l2{
+        margin-top: 5px;
+    }
+    .lfinal{
+        background-color: beige;
+    }
+    .l2 .obs{
+        margin-top: -130px;
+    }
+    .l3 .obs{
+        margin-top: -120px;
+    }
+}
+@media (max-height:1300px){
+    .l1{
+        margin-top: -105px;
+    }
+}
+@media (max-height:1050px){
+    .l1{
+        margin-top: -90px;
+    }
+    .lfinal{
+        margin-top: 5px;
+    }
+    .l2{
+        margin-top: 10px;
+    }
+
+}
+@media (max-height:1030px){
+    .lfinal{
+        margin-top: 12px;
+    }
+    .espac{
+        height: 140px;
+    }
+}
+@media (max-height:990px){
+    .l2{
+        margin-top: 17px;
+    }
+    .lfinal{
+        margin-top: 11px;
+    }
+}
+
+@media (max-height:940px){
+    .l1 .obs{
+        margin-top: -7%;
+    }
+    .l2 .obs{
+        margin-top: -7%;
+    }
+    .l3 .obs{
+        margin-top: -7%;
+    }
+    .lfinal .obs{
+        margin-top: -7%;
+    }
+}
+@media (max-height:870px){
+    .l1 .obs{
+        margin-top: -5%;
+    }
+    .l2 .obs{
+        margin-top: -5%;
+    }
+    .l3 .obs{
+        margin-top: -5%;
+    }
+    .lfinal .obs{
+        margin-top: -4%;
+    }
+}
+
+@media (max-height:930px) and (min-height:850px){
+    .l1{
+        margin-top: -80px;
+    }
+    .l2{
+        margin-top: 10px;
+    }
+    .l3{
+        margin-top: 10px;
+    }
+    .lfinal{
+        margin-top: 5px;
+    }
+    .espac{
+        height:10px;
+
+    }
+}
+@media (max-height:820px){
+    .l1{
+        margin-top: -85px;
+    }
+}
+@media (max-height:790px){
+    .l1{
+        margin-top: -80px;
+    }
+    .l3{
+        margin-top: 10px;
+    }
+    .espac{
+        height: 10px;
+    }
+    .l1 .obs, .l1 .obsdiv{
+        margin-top: -70px;
+    }
+}
+@media (max-height:750px){
+    .espac{
+        height: 50px;
+    }
+    .l1{
+        margin-top: -80px;
+    }
+}
+@media (max-height:715px){
+    .lfinal{
+        margin-top: 5px;
+    }
+    .l2{
+        margin-top: 17px;
+    }
+    .l3{
+        margin-top: 9px;
+    }
+}
+@media (max-height: 695px){
+    .l1{
+        margin-top: -65px;
+    }
+    .l2{
+        margin-top: 10px;
+    }
+    .l3{
+        margin-top: 8px;
+    }
+}
+@media (max-height: 650px){
+    .l1{
+        margin-top: -60px;
+    }
+    .l3{
+        margin-top: 10px;
+    }
+    .lfinal{
+        margin-top: 11px;
+    }
+    .l1 .obs{
+        margin-top: -4%;
+    }
+    .l2 .obs{
+        margin-top: -3.5%;
+    }
+    .l3 .obs{
+        margin-top: -3.5%;
+    }
+    .lfinal .obs{
+        margin-top: -4%;
+    }
+    .l2 .obsdiv{
+        margin-top: -3.5%;
+    }
+    .l3 .obsdiv{
+        margin-top: -3.5%;
+    }
+    .lfinal .obsdiv{
+        margin-top: -3.7%;
+    }
+}
+@media (max-height:570px){
+    .lfinal{
+        margin-top: 3px;
+    }
+    .lfinal .obs{
+        margin-top: -3.5%;
+    }
+    .lfinal .obsdiv{
+        margin-top: -3.3%;
+    }
+}

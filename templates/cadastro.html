@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA - Cadastrar novo acesso</title>
+    <link rel="stylesheet" href="../static/css/cadastro.css"></link>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="{{ url_for('cadastro') }}" method="POST">    <!-- necessário este elemento como action para se comunicar com o python-->
+            <fieldset>
+                <legend>Cadastrar-se</legend>
+                <br>
+
+                <div class="inputBox">
+                    <input type="text" name="username" id="username" class="inputUser" required>
+                    <label for="username" class="inputLabel">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="inputLabel">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="inputLabel">Telefone</label>
+                </div>
+                <br><br>
+                Sexo: 
+                <select name="sexo" id="sexo" class="inputSelect" required>
+                    <option value="" data-default disabled selected></option>
+                    <option value="F">Feminino</option>
+                    <option value="M">Masculino</option>
+                </select>
+
+                <!-- estilo opções RADIO:
+                <input type="radio" name="genero" id="feminino" value="feminino" required>  ---TROCAR POR SELECT, NAME SEXO
+                <label for="feminino">Feminino</label>
+                <br>
+                <input type="radio" name="genero" id="masculino" value="masculino" required> 
+                <label for="masculino">Masculino</label>
+                -->
+                
+                <br><br><br>
+
+                <label for="data_nascimento">Data de nascimento:</label>
+                <input type="date" name="data_nascimento" id="data_nascimento" class="inputSelect" required>
+
+                <br><br><br>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <span class="olho-senha">&#x1F441;</span>
+                    <label for="senha" class="inputLabel">Senha</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="consenha" id="consenha" class="inputUser" required>
+                    <span class="olho-senha">&#x1F441;</span>                      <!-- CHECAR!!! script de olho do repetir senha nao ta funfando -->
+                    <label for="consenha" class="inputLabel">Repetir senha</label>
+                </div>
+                <br><br>
+
+                <input type="submit" name="submit" id="submit">
+
+                <script>                                                    /* script do olho de visualizar senha */
+                    let btn = document.querySelector('.olho-senha');
+                    btn.addEventListener('click', function() {
+                    
+                        let input = document.querySelector('#senha');
+                    
+                        if(input.getAttribute('type') == 'password') {
+                            input.setAttribute('type', 'text');
+                        } else {
+                            input.setAttribute('type', 'password');
+                        }
+                        
+                    });
+                </script>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

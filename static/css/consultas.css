@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffebcd;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .wrapper {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 6px;
+      width: 350px;
+      height: 550px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 20px 0 darkgrey;
+  }
+  
+  form{
+    position: absolute;
+    margin-top: 80px;
+    transition: .5s;
+    width: 300px;
+    height: 400px;
+  }
+  /* Pedro aqui */
+  /* não sei oq deu nesse style, mas como a data e o select precisam estar em forms diferentes, usar esse msm style pros 2 forms tava impedindo de usar ele, 
+  ent eu fiz esse style só se aplicar ao form de select*/
+  
+  .buttonsForm {
+    margin-top: 40px;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 0 7px 0 dodgerblue;
+  }
+  
+  .buttonsForm button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    padding: 10px 29px;
+  }
+  
+  .btnColor {
+    position: absolute;
+    width: 126px;
+    height: 100%;
+    background: linear-gradient(to right, #5956e9, #a963f8);
+    border-radius: 30px;
+    transition: .3s;
+  
+  }
+  
+  .inputBox {
+      position: relative;
+  }
+  .inputUser {
+      background: none;
+      border: none; 
+      border-left: 1px solid deepskyblue;
+      border-bottom: 1px solid deepskyblue; /* cria uma linha embaixo dos campos */
+      outline: none;                    /* ao selecionar o campo, não fica marcando o quadro todo */
+      color: rgb(0, 0, 0);
+      font-size: 15px;
+      width: 100%;
+      resize: none;
+      letter-spacing: 2px;              /* espaço entre os caracteres que serão digitados nos campos */
+  }
+  .inputLabel {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      pointer-events: none;
+      transition: .5s;
+  }
+  
+  .inputSelect {             
+      border: none;
+      padding: 6px;
+      border-radius: 10px;
+      outline: none;
+      font-size: 15px;
+  }
+  #submit {                           /* hastag para chamar pelo ID; ponto para chamar pela CLASS */
+      background-color: dodgerblue;
+      width: 100%;
+      border: none;
+      padding: 15px;
+      color: aqua;
+      font-size: 15px;
+      border-radius: 10px;
+  }
+  #submit:hover {        /* mudanças ao posicionar o cursor sobre */
+      background-color: deepskyblue;
+      cursor: pointer;
+  }
+  
+  @media (max-width: 800px){
+      .wrapper {
+          min-width: 100%;
+          border-radius: 15px;
+      }
+  }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste por enqt</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/teste.js"></script>
+</head>
+<body style="height: calc(100vh + {}px);" onload="uai()" onunload="ue()"> <!-- onload="uai()" onunload="ue()"-->
+    <div class="sticky">
+    <header class="header">
+        <form action="{{ url_for('home') }}" id="form" method="post">
+            <span>Ola senhor{} {}</span>
+            <input type="date" name="datahoje" id="datahoje" onchange="teste()">
+        </form>
+    </header>
+</div>
+
+    <p class="data">{}</p>
+
+
+    <div class="agenda">
+        <div class="linha">{}</div>
+        <div class="linha2"></div>
+        <div class="linha3"></div>
+        <div class="linha4"></div>
+        <div class="linha5"></div>
+        <div class="linha6"></div>
+        <div class="linha7"></div>
+        <div class="linha8"></div>
+        {}
+        
+    </div>
+
+    <footer>
+        <a href="/logout" class="logout"><input type="button" value="logout" class="logout"></a>
+        <a href="/delete" class="delete"><input type="button" value="deletar consultas"></a>
+    </footer>
+    <button style="position: fixed; right: 0px; top: 40%; height: 20%; font-size:x-large; background-color: rgba(0, 0, 0, 0.123); border:none; cursor: pointer;" onclick="maisdata()">></button>
+    <button style="position: fixed; left: 0px; top: 40%; height: 20%; font-size: x-large; background-color: rgba(0, 0, 0, 0.123); border:none; cursor: pointer;" onclick="menosdata()"><</button>
+</body>
+</html>
