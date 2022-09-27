@@ -11,7 +11,7 @@ app.secret_key = 'pedrao'
 @app.route("/", methods =["GET", "POST"]) #isso define a roa como a homepage
 def login():
     varteste = session.get('varteste', None)
-    if varteste != "":
+    if varteste != "pac" or varteste != "med" or varteste != "dono":
         return ("""<script>
                 window.location.assign("/homepage")
                 </script>
