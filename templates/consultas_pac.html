@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="wrapper">
-
-        <h2>desmarcar</h2>
-
+        <fieldset>
+        <h3>desmarcar</h3>
+    </fieldset>
     
 
         <form action="{{ url_for('delete') }}" method="post"><!-- necessário este elemento como action para se comunicar com o python-->
@@ -22,7 +22,7 @@
             <!-- Pedro aqui, a data e o select precisam estar em forms diferentes -->
         </form>
         <form id="form" action="{{ url_for('delete') }}" method="post">
-            <br><br><br>
+            <br><br><br><br>
             Selecionar consulta: 
             <select name="desmarcar" id="paciente" class="inputSelect" {} required>
                 <option value="" data-default disabled selected></option>
