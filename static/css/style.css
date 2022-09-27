@@ -502,6 +502,12 @@ footer .delete{
     body{
         background-color: pink;
     }
+    .l2{
+        margin-top: 5px;
+    }
+    .l3{
+        margin-top: 8px;
+    }
     .lfinal{
         margin-top: 10px;
     }
