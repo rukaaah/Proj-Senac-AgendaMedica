@@ -70,7 +70,7 @@ legend {
     background-color: deepskyblue;
     cursor: pointer;
 }
-.olho-senha {
+.olho-senha, .olho-consenha {
     position: absolute;
     top: -13px;
     right: 10px;
