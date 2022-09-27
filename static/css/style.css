@@ -389,7 +389,7 @@ footer .delete{
         background-color: beige;
     }
 }
-@media (max-height:700px) {
+@media (max-height:800px) {
     body{
         background-color: green;
     }
