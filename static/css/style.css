@@ -371,11 +371,7 @@ footer .delete{
 }
 
 
-@media (max-height:3000px) {
-    body{
-        background-color: green;
-    }
-}
+
 @media (max-height:1610px){
     .l1{
         margin-top: -125px;
@@ -391,6 +387,11 @@ footer .delete{
 }
     body{
         background-color: beige;
+    }
+}
+@media (max-height:600px) {
+    body{
+        background-color: green;
     }
 }
 @media (max-height:1500px) {
