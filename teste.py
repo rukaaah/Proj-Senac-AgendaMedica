@@ -439,9 +439,9 @@ def home():
                             hora_div = str(hora[c])[:-3][2:]
                             temp = ("""
                             <div class="l1">
-                                <p>Consulta: {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Consulta: {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                             </div>
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
@@ -454,9 +454,9 @@ def home():
                             hora_div = str(hora[c])[:-3][2:]
                             temp = ("""
                             <div class="l2">
-                                <p>Consulta: {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Consulta: {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
                             </div>
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
@@ -469,9 +469,9 @@ def home():
                             obs_div = str(obs[c])[:-3][2:]
                             temp = ("""
                             <div class="l3">
-                                <p>Consulta: {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Consulta: {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
                             </div>
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
@@ -489,9 +489,9 @@ def home():
                             
                             <div class="lfinal" style=" background-color: none;">
                             
-                                <p>Consulta: {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Consulta: {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                             </div>
                             
@@ -516,9 +516,9 @@ def home():
                             
                             <div class="lfinal espac" style="margin-top: 24px; background-color: none; ">
                             
-                                <p>Consulta: {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Consulta: {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                                 <p style="display: none;"  id="tamanho">{}</p>
                             </div>
@@ -541,9 +541,9 @@ def home():
                             hora_div = str(hora[c])[:-3][2:]
                             temp = ("""
                             <div class="l1">
-                                <p>Hoje você tem {}</p>
-                                <p>Horario: {}</p>
-                                <p>Paciente: {}</p>
+                                <p class="jump">Hoje você tem {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Paciente: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                             </div>
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
@@ -556,9 +556,9 @@ def home():
                             hora_div = str(hora[c])[:-3][2:]
                             temp = ("""
                             <div class="l2">
-                                <p>Hoje você tem {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Hoje você tem {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
                             </div>
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
@@ -571,9 +571,9 @@ def home():
                             obs_div = str(obs[c])[:-3][2:]
                             temp = ("""
                             <div class="l3">
-                                <p>Hoje você tem {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Hoje você tem {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
                             </div>
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
@@ -591,9 +591,9 @@ def home():
                             
                             <div class="lfinal" style=" background-color: none;">
                             
-                                <p>Hoje você tem {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Hoje você tem {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                             </div>
                             
@@ -618,9 +618,9 @@ def home():
                             
                             <div class="lfinal espac" style="margin-top: 24px; background-color: none; ">
                             
-                                <p>Hoje você tem {}</p>
-                                <p>Horario: {}</p>
-                                <p>Medico: {}</p>
+                                <p class="jump">Hoje você tem {}</p>
+                                <p class="jump">Horario: {}</p>
+                                <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                                 <p style="display: none;"  id="tamanho">{}</p>
                             </div>
@@ -1014,7 +1014,7 @@ def delete():
                 
                 return("""<script>
                 alert('Consulta cadastrada com sucesso, doutor{} {}');
-                window.location.assign("/homepage")
+                window.location.assign("/delete")
                 </script>
                 """).format(sexo, name)
 

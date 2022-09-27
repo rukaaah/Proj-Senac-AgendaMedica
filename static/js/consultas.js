@@ -5,7 +5,7 @@ var btnColor = document.querySelector('.btnColor')
 
 //deixar o botão previamente selecionado ao carregar pagina...
 document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("btnAgendar").click();
+    document.getElementById("btnDesmarcar").click();
 });
 
 document.querySelector('#btnAgendar')
