@@ -389,7 +389,7 @@ footer .delete{
         background-color: beige;
     }
 }
-@media (max-height:900px) {
+@media (max-height:900px) and (min-height:800px){
     body{
         background-color: green;
     }
@@ -486,7 +486,7 @@ footer .delete{
         margin-top: 10px;
     }
     .l3{
-        margin-top: 10px;
+        margin-top: 11px;
     }
     .lfinal{
         margin-top: 13px;
