@@ -389,12 +389,12 @@ footer .delete{
         background-color: beige;
     }
 }
-@media (max-height:900px) and (min-height:850px){
+@media (max-height:850px) and (min-height:825px){
     body{
         background-color: green;
     }
 }
-@media (max-height:850px) and (min-height:800px){
+@media (max-height:825px) and (min-height:800px){
     body{
         background-color: pink;
     }
