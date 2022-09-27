@@ -498,7 +498,7 @@ footer .delete{
         margin-top: -75px;
     }
 }
-@media (max-height:825px) and (min-height:800px){
+@media only screen and (max-height:825px) and (min-height:800px){
     body{
         background-color: pink;
     }
@@ -506,7 +506,7 @@ footer .delete{
         margin-top: 5px;
     }
     .l3{
-        margin-top: 8px;
+        margin-top: 5px;
     }
     .lfinal{
         margin-top: 10px;
