@@ -366,9 +366,6 @@ footer .delete{
 .l2 .obsdiv,.l3 .obsdiv,.l1 .obsdiv,.lfinal .obsdiv{
     margin-top: -90px;
 }
-.lfinal{
-    background-color: red;
-}
 
 
 
@@ -385,9 +382,6 @@ footer .delete{
     .lfinal{
         margin-top: 20px;
 }
-    body{
-        background-color: beige;
-    }
 }
 
 @media (max-height:1500px) {
@@ -464,13 +458,16 @@ footer .delete{
         margin-top: -80px;
     }
     .l3{
-        margin-top: 12px;
+        margin-top: 11px;
     }
     .l2 .obs,.l3 .obs,.l1 .obs,.lfinal .obs{
         margin-top: -8vh;
     }
     .l2 .obsdiv,.l3 .obsdiv,.l1 .obsdiv,.lfinal .obsdiv{
         margin-top: -8vh;
+    }
+    .lfinal{
+        margin-top: 8px;
     }
 }
 
@@ -499,9 +496,6 @@ footer .delete{
     }
 }
 @media only screen and (max-height:825px) and (min-height:800px){
-    body{
-        background-color: pink;
-    }
     .l2{
         margin-top: 5px;
     }
