@@ -54,19 +54,3 @@ body {
 [data-tooltip]:hover:after {
     display: block;
 }
-
-.botao-logout {
-    background-color: rgb(104, 104, 104);
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: aqua;
-    font-size: 15px;
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-.botao-logout:hover {        /* mudanças ao posicionar o cursor sobre */
-    background-color: rgb(211,211,211);
-    cursor: pointer;
-}

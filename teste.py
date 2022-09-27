@@ -284,7 +284,6 @@ def home():
                     """).format(nome_div, hora_div, med_div, c, c, obs_div)
                     divs_evento.append(temp)
                     c = c+1
-                    height = 100
                 elif c >=9 and c != tamanho-1:
                     nome_div = str(nome_evento[c])[:-3][2:]
                     med_div = str(medico[c])[:-3][2:]
@@ -311,7 +310,7 @@ def home():
                     """).format(calc)
                     calc = calc+10
                     display.append(linha)
-                    height = height+100
+                    height = height+10
                 elif c >=9 and c == tamanho-1:
                     nome_div = str(nome_evento[c])[:-3][2:]
                     med_div = str(medico[c])[:-3][2:]
@@ -333,7 +332,7 @@ def home():
                     """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                     divs_evento.append(temp)
                     c = c+1
-
+                    height = height+10
                     linha = ("""
                     <div class="linhaf" style="background-color: none; position: ; width: 100%; height: 1px; top: calc({}% + 50px); border: black dotted 2px; border-right: none; border-left: none; border-top: none; border-right: none;"></div>
                     """).format(calc)
@@ -432,7 +431,7 @@ def home():
                 for nome in nome_evento:
                     c = c
                     med= str(medico[c])
-                    if med != "('',)":
+                    if med != "('',)" and med != "(None,)":
                         if c == 0:
                             nome_div = str(nome_evento[c])[:-3][2:]
                             med_div = (medico[c])
@@ -580,7 +579,7 @@ def home():
                             """).format(nome_div, hora_div, med_div, c, c, obs_div)
                             divs_evento.append(temp)
                             c = c+1
-                            height = 100
+                            height = 10
                         elif c >=9 and c != tamanho-1:
                             nome_div = str(nome_evento[c])[:-3][2:]
                             med_div = str(paciente[c])[:-3][2:]
@@ -607,7 +606,7 @@ def home():
                             """).format(calc)
                             calc = calc+10
                             display.append(linha)
-                            height = height+100
+                            height = height+10
                         elif c >=9 and c == tamanho-1:
                             nome_div = str(nome_evento[c])[:-3][2:]
                             med_div = str(paciente[c])[:-3][2:]
@@ -634,6 +633,7 @@ def home():
                             <div class="linhaf" style="background-color: none; position: ; width: 100%; height: 1px; top: calc({}% + 50px); border: black dotted 2px; border-right: none; border-left: none; border-top: none; border-right: none;"></div>
                             """).format(calc)
                             display.append(linha)
+                            height = height+10
                             calc = calc+10
                         
 
@@ -650,297 +650,6 @@ def home():
                 if data_br == None:
                     data_br = ""
                 return render_template("index.html").format(height, sexo, name, data_br, org_evento, display)
-            #return render_template("index.html").format(sexo, name, block, org_evento, filler, none, filler)
-                #
-                #COD PARA CASO O FORM DE DIA SEJA PUXADO
-                #
-                # data = request.form.get("datahoje")
-                # data_ano = data[:-6]
-                # data_mes = data[:-3][5:]
-                # data_dia = data[8:]
-                # data_br = (data_dia+"/"+data_mes)
-                # connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
-
-                # readsexo = ("""
-                # SELECT Sexo FROM users WHERE usermail = '{}'
-                # """).format(email)
-
-                # sexo = Server.read_query(connection, readsexo)
-                # sexo = str(sexo)
-                # if sexo == "[('M',)]" or sexo == "[('M',)]" :
-                #     sexo = ""
-                # else:
-                #     sexo = "a"
-
-
-
-                # readnome = ("""
-                # SELECT nome_evento FROM `{}` WHERE data_evento = '{}'
-                # """).format(email, data)
-
-                # readmed = ("""
-                # SELECT med FROM `{}` WHERE data_evento = '{}'
-                # """).format(email, data)
-
-                # readobs = ("""
-                # SELECT detalhe_evento FROM `{}` WHERE data_evento = '{}'
-                # """).format(email, data)
-
-                # readhora = ("""
-                # SELECT hora_evento FROM `{}` WHERE data_evento = '{}'
-                # """).format(email, data)
-                # readpaciente = ("""
-                # SELECT paciente FROM `{}` WHERE data_evento = '{}'
-                # """).format(email, data)
-
-                # paciente = Server.read_query(connection, readpaciente)
-
-                # nome_evento = Server.read_query(connection, readnome)
-                # #nome_evento = str(nome_evento)[:-4][3:]
-
-                # medico = Server.read_query(connection, readmed)
-                # #medico = str(medico)[:-4][3:]
-
-                # obs = Server.read_query(connection, readobs)
-                # #obs = str(obs)[:-4][3:]
-
-                # hora = Server.read_query(connection, readhora)
-
-                # divs_evento = []
-                # c = int(c)
-                # c = 0
-                # calc = 74.9
-                # display = []
-                # height = 0
-                # linha = []
-                # tamanho = len(nome_evento)
-                # for nome in nome_evento:
-                #     if medico[c] == "(None,)":
-                #         c = c
-                #         #
-                #         #
-                #         #COD AQUI
-                #         #
-                #         #
-                #         if c == 0:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             med_div = str(medico[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             temp = ("""
-                #             <div class="l1">
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Medico: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
-                #             </div>
-                #             """).format(nome_div, hora_div, med_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-                #         elif c == 1:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             med_div = str(medico[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             temp = ("""
-                #             <div class="l2">
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Medico: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
-                #             </div>
-                #             """).format(nome_div, hora_div, med_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-                #         elif c >= 2 and c <9:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             med_div = str(medico[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-                #             temp = ("""
-                #             <div class="l3">
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Medico: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
-                #             </div>
-                #             """).format(nome_div, hora_div, med_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-                #             height = 100
-                #         elif c >=9 and c != tamanho-1:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             med_div = str(medico[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-
-
-                #             temp = ("""
-                            
-                #             <div class="lfinal" style=" background-color: none;">
-                            
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Medico: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
-                #             </div>
-                            
-                #             """).format(nome_div, hora_div, med_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-
-                #             linha = ("""
-                #             <div class="linhaf" style="background-color: none; position: ; width: 100%; height: 1px; top: calc({}% + 50px); border: black dotted 2px; border-right: none; border-left: none; border-top: none; border-right: none;"></div>
-                #             """).format(calc)
-                #             calc = calc+10
-                #             display.append(linha)
-                #             height = height+100
-                #         elif c >=9 and c == tamanho-1:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             med_div = str(medico[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-
-
-                #             temp = ("""
-                            
-                #             <div class="lfinal espac" style="margin-top: 24px; background-color: none; ">
-                            
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Medico: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
-                #                 <p style="display: none;"  id="tamanho">{}</p>
-                #             </div>
-                            
-                #             """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
-                #             divs_evento.append(temp)
-                #             c = c+1
-
-                #             linha = ("""
-                #             <div class="linhaf" style="background-color: none; position: ; width: 100%; height: 1px; top: calc({}% + 50px); border: black dotted 2px; border-right: none; border-left: none; border-top: none; border-right: none;"></div>
-                #             """).format(calc)
-                #             calc = calc+10
-                #             display.append(linha)
-                                
-                #     else:
-                #         if c == 0:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             pac_div = str(paciente[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             temp = ("""
-                #             <div class="l1">
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Paciente: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
-                #             </div>
-                #             """).format(nome_div, hora_div, pac_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-                #         elif c == 1:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             pac_div = str(paciente[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             temp = ("""
-                #             <div class="l2">
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Paciente: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
-                #             </div>
-                #             """).format(nome_div, hora_div, pac_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-                #         elif c >= 2 and c <9:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             pac_div = str(paciente[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-                #             temp = ("""
-                #             <div class="l3">
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Paciente: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
-                #             </div>
-                #             """).format(nome_div, hora_div, pac_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-                #             height = 100
-                #         elif c >=9 and c != tamanho-1:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             pac_div = str(paciente[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-
-
-                #             temp = ("""
-                            
-                #             <div class="lfinal" style=" background-color: none;">
-                            
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Paciente: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
-                #             </div>
-                            
-                #             """).format(nome_div, hora_div, pac_div, c, c, obs_div)
-                #             divs_evento.append(temp)
-                #             c = c+1
-
-                #             linha = ("""
-                #             <div class="linhaf" style="background-color: none; position: ; width: 100%; height: 1px; top: calc({}% + 50px); border: black dotted 2px; border-right: none; border-left: none; border-top: none; border-right: none;"></div>
-                #             """).format(calc)
-                #             calc = calc+10
-                #             display.append(linha)
-                #             height = height+100
-                #         elif c >=9 and c == tamanho-1:
-                #             nome_div = str(nome_evento[c])[:-3][2:]
-                #             pac_div = str(paciente[c])[:-3][2:]
-                #             hora_div = str(hora[c])[:-3][2:]
-                #             obs_div = str(obs[c])[:-3][2:]
-
-
-                #             temp = ("""
-                            
-                #             <div class="lfinal espac" style="margin-top: 24px; background-color: none; ">
-                            
-                #                 <p>Consulta: {}</p>
-                #                 <p>Horario: {}</p>
-                #                 <p>Paciente: {}</p>
-                #                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
-                #                 <p style="display: none;"  id="tamanho">{}</p>
-                #             </div>
-                            
-                #             """).format(nome_div, hora_div, pac_div, c, c, obs_div, tamanho)
-                #             divs_evento.append(temp)
-                #             c = c+1
-
-                #             linha = ("""
-                #             <div class="linhaf" style="background-color: none; position: ; width: 100%; height: 1px; top: calc({}% + 50px); border: black dotted 2px; border-right: none; border-left: none; border-top: none; border-right: none;"></div>
-                #             """).format(calc)
-                #             calc = calc+10
-                #             display.append(linha)
-                        
-
-                # c = 0
-                # org_evento = ""
-                # for evento in divs_evento:
-                #     org_evento = org_evento+str(divs_evento[c])
-                #     c = c+1
-
-                # # ordem format: sexo, username, dia, nome_evento, medico, obs
-                # block = "block"
-                # none = "none"
-                # filler = ""
-                # if data_br == None:
-                #     data_br = ""
-                # return render_template("index_medico.html").format(height, sexo, name, data_br, org_evento, linha)
-
-                #return aqui
         filler = ""
         none= "none"
         block = ""
@@ -1443,7 +1152,7 @@ def delete():
                 else:
                     filler = ""
                 
-                return render_template("consultas.html").format(filler, select_evento)
+                return render_template("consultas.html").format(select_pac, filler, select_evento)
         disabled = "disabled"
         filler = ""
         return render_template("consultas.html").format(select_pac,disabled, filler)

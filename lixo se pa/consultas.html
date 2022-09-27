@@ -49,23 +49,22 @@
 
         </form>
 
-        <form id="desmarcar" action="{{ url_for('delete') }}" method="POST" class="form_date">    <!-- necessário este elemento como action para se comunicar com o python-->
+        <form id="desmarcar" action="{{ url_for('delete') }}" method="POST">    <!-- necessário este elemento como action para se comunicar com o python-->
             <br>
-            <label for="data">Data da consulta:</label>
-            <input type="date" name="data" id="data_consulta" class="inputSelect" required onchange="this.form.submit()">
-            <br><br><br><br>
-        </form>
-        
-        <form id="desmarcar2" action="{{ url_for('delete') }}" method="POST">
-            <br><br><br><br>
+
+            <label for="data_consulta">Data da consulta:</label>
+            <input type="date" name="data_consulta" id="data_consulta" class="inputSelect" required>
+            <br><br><br>
+
             Selecionar consulta: 
-            <select name="desmarcar" id="paciente" class="inputSelect" {} required>
+            <select name="paciente" id="paciente" class="inputSelect" required>
                 <option value="" data-default disabled selected></option>
-                {} <!-- ATRIBUIR NESTE VALUE COMUNICAÇÃO COM PYTHON ??? -->
+                <option value=""></option> <!-- ATRIBUIR NESTE VALUE COMUNICAÇÃO COM PYTHON ??? -->
             </select>
             <br><br><br>
 
             <button type="submit" id="submit">OK</button>
+
         </form>
     </div>
     <script src="../static/js/consultas.js"></script>
