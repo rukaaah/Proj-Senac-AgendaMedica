@@ -576,34 +576,21 @@ footer .delete{
         margin-top: -65px;
     }
     .l3{
-        margin-top: 8px;
+        margin-top: 6px;
     }
     .l2{
         margin-top: 13px;
     }
 
+}
+@media (max-height:660px){
+    .l3{
 
-    /* .l1 .obs{
-        margin-top: -4%;
+        margin-top: 8px;
     }
-    .l2 .obs{
-        margin-top: -3.5%;
+    .lfinal{
+        margin-top: 10px;
     }
-    .l3 .obs{
-        margin-top: -3.5%;
-    }
-    .lfinal .obs{
-        margin-top: -4%;
-    }
-    .l2 .obsdiv{
-        margin-top: -3.5%;
-    }
-    .l3 .obsdiv{
-        margin-top: -3.5%;
-    }
-    .lfinal .obsdiv{
-        margin-top: -3.7%;
-    } */
 }
 @media (max-height:640px){
     .l3{
