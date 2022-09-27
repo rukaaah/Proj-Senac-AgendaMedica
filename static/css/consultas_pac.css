@@ -21,19 +21,17 @@
       position: relative;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 0 20px 0 darkgrey;
+      box-shadow: 0 0 20px darkgray;
   }
   
   form#form {
-    position: absolute;
-    margin-top: 80px;
+    background-color: green;
+    position: fixed;
+    margin-top: 40px;
     transition: .5s;
     width: 300px;
-    height: 400px;
+    height: 0px;
   }
-  /* Pedro aqui */
-  /* não sei oq deu nesse style, mas como a data e o select precisam estar em forms diferentes, usar esse msm style pros 2 forms tava impedindo de usar ele, 
-  ent eu fiz esse style só se aplicar ao form de select*/
   
   .buttonsForm {
     margin-top: 40px;
@@ -62,7 +60,7 @@
   }
   
   .inputBox {
-      position: relative;
+      position: relative; 
   }
   .inputUser {
       background: none;
@@ -73,7 +71,6 @@
       color: rgb(0, 0, 0);
       font-size: 15px;
       width: 100%;
-      resize: none;
       letter-spacing: 2px;              /* espaço entre os caracteres que serão digitados nos campos */
   }
   .inputLabel {
@@ -85,11 +82,12 @@
   }
   
   .inputSelect {             
-      border: none;
       padding: 6px;
-      border-radius: 10px;
-      outline: none;
+      border-radius: 12px;
+      outline: auto;
       font-size: 15px;
+      margin-left: 2px;
+      text-align: center;
   }
   #submit {                           /* hastag para chamar pelo ID; ponto para chamar pela CLASS */
       background-color: dodgerblue;
@@ -110,6 +108,15 @@
           min-width: 100%;
           border-radius: 15px;
       }
+  }
+  fieldset {
+        background: transparent;
+        border: color black;
+        outline: auto;
+        position: relative;
+        padding: 10px 29px;
+        font-size: 15px;
+        border-radius: 25px;
   }
   .botao-logout {
     background-color: rgb(104, 104, 104);
