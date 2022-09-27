@@ -447,8 +447,9 @@ def home():
                                 <p class="jump">Horario: {}</p>
                                 <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
                         elif c == 1:
@@ -462,8 +463,9 @@ def home():
                                 <p class="jump">Horario: {}</p>
                                 <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
                         elif c >= 2 and c <9:
@@ -477,8 +479,9 @@ def home():
                                 <p class="jump">Horario: {}</p>
                                 <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
                             height = 100
@@ -497,9 +500,10 @@ def home():
                                 <p class="jump">Horario: {}</p>
                                 <p class="jump">Medico: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
                             
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
 
@@ -549,8 +553,9 @@ def home():
                                 <p class="jump">Horario: {}</p>
                                 <p class="jump">Paciente: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
                         elif c == 1:
@@ -562,10 +567,11 @@ def home():
                             <div class="l2">
                                 <p class="jump">Hoje você tem {}</p>
                                 <p class="jump">Horario: {}</p>
-                                <p class="jump">Medico: {}</p>
+                                <p class="jump">Paciente: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
                         elif c >= 2 and c <9:
@@ -577,10 +583,11 @@ def home():
                             <div class="l3">
                                 <p class="jump">Hoje você tem {}</p>
                                 <p class="jump">Horario: {}</p>
-                                <p class="jump">Medico: {}</p>
+                                <p class="jump">Paciente: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
                             height = 10
@@ -597,11 +604,12 @@ def home():
                             
                                 <p class="jump">Hoje você tem {}</p>
                                 <p class="jump">Horario: {}</p>
-                                <p class="jump">Medico: {}</p>
+                                <p class="jump">Paciente: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
+                                <p style="display: none;"  id="tamanho">{}</p>
                             </div>
                             
-                            """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                            """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                             divs_evento.append(temp)
                             c = c+1
 
@@ -624,7 +632,7 @@ def home():
                             
                                 <p class="jump">Hoje você tem {}</p>
                                 <p class="jump">Horario: {}</p>
-                                <p class="jump">Medico: {}</p>
+                                <p class="jump">Paciente: {}</p>
                                 <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
                                 <p style="display: none;"  id="tamanho">{}</p>
                             </div>
