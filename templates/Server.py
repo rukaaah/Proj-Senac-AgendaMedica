@@ -1,7 +1,26 @@
 import mysql.connector
 from mysql.connector import Error
 import pandas as pd
-    
+import smtplib
+import email.message
+
+def enviar_email(corpo, assunto, emails):  
+    corpo_email = corpo
+
+    msg = email.message.Message()
+    msg['Subject'] = assunto
+    msg['From'] = 'dailyrpg1@gmail.com'
+    msg['To'] = emails
+    password = 'vqkphyftlgxgczef' 
+    msg.add_header('Content-Type', 'text/html')
+    msg.set_payload(corpo_email )
+
+    s = smtplib.SMTP('smtp.gmail.com: 587')
+    s.starttls()
+    # Login Credentials for sending the mail
+    s.login(msg['From'], password)
+    s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
+    print('Email enviado')
 
 def create_db_connection(host_name, user_name, user_password, db_name):
     connection = None

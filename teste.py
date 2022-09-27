@@ -11,7 +11,11 @@ app.secret_key = 'pedrao'
 @app.route("/", methods =["GET", "POST"]) #isso define a roa como a homepage
 def login():
     varteste = session.get('varteste', None)
-
+    if varteste != "":
+        return ("""<script>
+                window.location.assign("/homepage")
+                </script>
+                """)
 
     if request.method == "POST":
         email = request.form.get("email")
@@ -84,7 +88,13 @@ def login():
 
 @app.route("/cadastro", methods =["GET", "POST"])
 def cadastro():
-    varteste = session.get('varteste', None)
+    # ? DEIXAR ISSO NO FIM DO PROJETO? PROIBIR CADASTRAR SE N ESTIVER DESLOGADO?
+    # varteste = session.get('varteste', None)
+    # if varteste != "":
+    #     return ("""<script>
+    #     window.location.assign("/homepage")
+    #     </script>
+    #     """)
     if request.method == "POST":
         email = request.form.get("email")
         senha = request.form.get("senha")
@@ -362,7 +372,7 @@ def home():
         filler = ""
         return  render_template("index.html").format(filler, sexo, name, filler, filler, filler) #teste isso de none e block
     if varteste == "med":
-        #
+        #!
         #PREPARAÇÃO PARA A DIV DE MEDICO
         #
         
@@ -661,7 +671,7 @@ def home():
                 filler = ""
                 if data_br == None:
                     data_br = ""
-                return render_template("index.html").format(height, sexo, name, data_br, org_evento, display)
+                return render_template("index_medico.html").format(height, sexo, name, data_br, org_evento, display)
         filler = ""
         none= "none"
         block = ""
@@ -794,8 +804,13 @@ def delete():
                 readhora = ("""
                 SELECT hora_evento FROM `{}` WHERE id_evento = '{}'
                 """).format(email, valor)
+                readdata = ("""
+                SELECT data_evento FROM `{}` WHERE id_evento = '{}'
+                """).format(email, valor)
+                data_consulta = Server.read_query(connection, readdata)
                 hora_consulta = Server.read_query(connection, readhora)
                 nome_consulta = Server.read_query(connection, readnome)
+                data_consulta = str(data_consulta)[:-4][16:]
                 hora_consulta = str(hora_consulta)[:-4][3:]
                 nome_consulta = str(nome_consulta)[:-4][3:]
                 nome_consulta = nome_consulta+" às "+hora_consulta
@@ -812,7 +827,12 @@ def delete():
                     readnome_pac = ("""
                     SELECT paciente FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
-
+                    # * LER O NOME DO MED CASO A PESSOA DESMARCANDO SEJA UM MEDICO
+                    readnome_med = ("""
+                    SELECT name FROM users WHERE usermail = '{}'
+                    """)
+                    nomemed = Server.read_query(connection, readnome_med)
+                    nomemed = str(nomemed)[:-4][3:]
                     nome_pac = Server.read_query(connection, readnome_pac)
                     nome_pac = str(nome_pac)[:-4][3:]
 
@@ -831,7 +851,7 @@ def delete():
 
                     id_evento_pac = ("""
                     SELECT id_evento FROM `{}` WHERE (data_evento, hora_evento, med) = ('{}', '{}', '{}')
-                    """).format(emailpac, data, hora_consulta, nomemed)
+                    """).format(emailpac, data, hora_consulta, nomepac)
                     id_pac = Server.read_query(connection, id_evento_pac)
                     id_pac = str(id_pac)[:-3][2:]
 
@@ -843,8 +863,16 @@ def delete():
                     DELETE FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
 
-                    # delete = Server.execute_query(connection, delete_evento)
-                    # delete1 = Server.execute_query(connection, delete_eventoself)
+                    assunto = ("""
+                    A consulta {} foi desmarcada
+                    """).format(nome_consulta)
+                    corpo = ("""
+                    <p>a consulta <b>{}</b> que iria acontecer no ano, mes e dia:  <b>{}</b> às <b>{}</b> foi desmarcada pelo medico <b>{}</b></p>
+                    """).format(nome_consulta, data_consulta, hora_consulta, nomemed)
+                    Server.enviar_email(corpo, assunto, emailmed)
+                    #!!!!!!!!!
+                    delete = Server.execute_query(connection, delete_evento)
+                    delete1 = Server.execute_query(connection, delete_eventoself)
                     d = "med"
 
                 else:
@@ -876,14 +904,21 @@ def delete():
                     delete_eventoself = ("""
                     DELETE FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
-                    
-                    # delete = Server.execute_query(connection, delete_evento)
-                    # delete1 = Server.execute_query(connection, delete_eventoself)
+                    assunto = ("""
+                    A consulta {} foi desmarcada
+                    """).format(nome_consulta)
+                    corpo = ("""
+                    <p>a consulta <b>{}</b> que iria acontecer no ano, mes e dia:  <b>{}</b> às <b>{}</b> foi desmarcada pelo paciente <b>{}</b></p>
+                    """).format(nome_consulta, data_consulta, hora_consulta, nomepac)
+                    Server.enviar_email(corpo, assunto, emailmed)
+                    #!!!!!!!
+                    delete = Server.execute_query(connection, delete_evento)
+                    delete1 = Server.execute_query(connection, delete_eventoself)
                     d = "pac"
                 data = session.get('data', None)
                 #return(id_med)
                 return("""<script>
-                alert('Consulta {}}');
+                alert('Consulta desmarcada com sucesso}');
                 window.location.assign("/delete")
                 </script>
                 """).format(med)
@@ -1038,10 +1073,15 @@ def delete():
                 readhora = ("""
                 SELECT hora_evento FROM `{}` WHERE id_evento = '{}'
                 """).format(email, valor)
+                readdata = ("""
+                SELECT data_evento FROM `{}` WHERE id_evento = '{}'
+                """).format(email, valor)
+                data_consulta = Server.read_query(connection, readdata)
                 hora_consulta = Server.read_query(connection, readhora)
                 nome_consulta = Server.read_query(connection, readnome)
                 hora_consulta = str(hora_consulta)[:-4][3:]
                 nome_consulta = str(nome_consulta)[:-4][3:]
+                data_consulta = str(data_consulta)[:-4][16:]
                 nome_consulta = nome_consulta+" às "+hora_consulta
 
                 readmedico = ("""
@@ -1056,6 +1096,11 @@ def delete():
                     readnome_pac = ("""
                     SELECT paciente FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
+                    readnome_med = ("""
+                    SELECT name FROM users WHERE usermail = '{}'
+                    """)
+                    nomemed = Server.read_query(connection, readnome_med)
+                    nomemed = str(nomemed)[:-4][3:]
 
                     nome_pac = Server.read_query(connection, readnome_pac)
                     nome_pac = str(nome_pac)[:-4][3:]
@@ -1086,6 +1131,14 @@ def delete():
                     delete_eventoself = ("""
                     DELETE FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
+
+                    assunto = ("""
+                    A consulta {} foi desmarcada
+                    """).format(nome_consulta)
+                    corpo = ("""
+                    <p>a consulta <b>{}</b> que iria acontecer no ano, mes e dia: <b>{}</b> às <b>{}</b> foi desmarcada pelo medico <b>{}</b></p>
+                    """).format(nome_consulta, data_consulta, hora_consulta, nomemed)
+                    Server.enviar_email(corpo, assunto, emailpac)
 
                     delete = Server.execute_query(connection, delete_evento)
                     delete1 = Server.execute_query(connection, delete_eventoself)
@@ -1120,6 +1173,14 @@ def delete():
                     delete_eventoself = ("""
                     DELETE FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
+
+                    assunto = ("""
+                    A consulta {} foi desmarcada
+                    """).format(nome_consulta)
+                    corpo = ("""
+                    <p>a consulta <b>{}</b> que iria acontecer no ano, mes e dia:  <b>{}</b> às <b>{}</b> foi desmarcada pelo medico <b>{}</b></p>
+                    """).format(nome_consulta, data_consulta, hora_consulta, nomemed)
+                    Server.enviar_email(corpo, assunto, emailmed)
                     
                     delete = Server.execute_query(connection, delete_evento)
                     delete1 = Server.execute_query(connection, delete_eventoself)

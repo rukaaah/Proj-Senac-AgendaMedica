@@ -12,10 +12,9 @@
     <div class="sticky">
     <header class="header">
         <form action="{{ url_for('home') }}" id="form" method="post">
-            <span>Ola doutor{} {}</span>
+            <span>Ola Doutor{} {}</span>
             <input type="date" name="datahoje" id="datahoje" onchange="teste()">
         </form>
-
     </header>
 </div>
 
@@ -35,7 +34,7 @@
 
     <footer>
         <a href="/logout" class="logout"><input type="button" value="logout" class="logout"></a>
-        <a href="/delete" class="delete"><input type="button" value="deletar consultas"></a>
+        <a href="/delete" class="delete"><input type="button" value="Desmarcar|Marcar Consultas"></a>
     </footer>
     <button style="position: fixed; right: 0px; top: 40%; height: 20%; font-size:x-large; background-color: rgba(0, 0, 0, 0.123); border:none; cursor: pointer;" onclick="maisdata()">></button>
     <button style="position: fixed; left: 0px; top: 40%; height: 20%; font-size: x-large; background-color: rgba(0, 0, 0, 0.123); border:none; cursor: pointer;" onclick="menosdata()"><</button>
