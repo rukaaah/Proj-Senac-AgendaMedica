@@ -250,8 +250,9 @@ def home():
                         <p>Horario: {}</p>
                         <p>Medico: {}</p>
                         <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
+                        <p style="display: none;"  id="tamanho">{}</p>
                     </div>
-                    """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                    """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                     divs_evento.append(temp)
                     c = c+1
                 elif c == 1:
@@ -265,8 +266,9 @@ def home():
                         <p>Horario: {}</p>
                         <p>Medico: {}</p>
                         <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
+                        <p style="display: none;"  id="tamanho">{}</p>
                     </div>
-                    """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                    """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                     divs_evento.append(temp)
                     c = c+1
                 elif c >= 2 and c <9:
@@ -280,8 +282,9 @@ def home():
                         <p>Horario: {}</p>
                         <p>Medico: {}</p>
                         <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam" >{}</textarea></div></p>
+                        <p style="display: none;"  id="tamanho">{}</p>
                     </div>
-                    """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                    """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                     divs_evento.append(temp)
                     c = c+1
                 elif c >=9 and c != tamanho-1:
@@ -299,9 +302,10 @@ def home():
                         <p>Horario: {}</p>
                         <p>Medico: {}</p>
                         <p class="obs" id="{}" onclick="clickcel(this.id)">Obs: <div class="obsdiv" id="teste{}"><textarea disabled class="obstam">{}</textarea></div></p>
+                        <p style="display: none;"  id="tamanho">{}</p>
                     </div>
                     
-                    """).format(nome_div, hora_div, med_div, c, c, obs_div)
+                    """).format(nome_div, hora_div, med_div, c, c, obs_div, tamanho)
                     divs_evento.append(temp)
                     c = c+1
 
@@ -831,8 +835,8 @@ def delete():
                     DELETE FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
 
-                    delete = Server.execute_query(connection, delete_evento)
-                    delete1 = Server.execute_query(connection, delete_eventoself)
+                    # delete = Server.execute_query(connection, delete_evento)
+                    # delete1 = Server.execute_query(connection, delete_eventoself)
                     d = "med"
 
                 else:
@@ -865,16 +869,16 @@ def delete():
                     DELETE FROM `{}` WHERE id_evento = '{}'
                     """).format(email, valor)
                     
-                    delete = Server.execute_query(connection, delete_evento)
-                    delete1 = Server.execute_query(connection, delete_eventoself)
+                    # delete = Server.execute_query(connection, delete_evento)
+                    # delete1 = Server.execute_query(connection, delete_eventoself)
                     d = "pac"
                 data = session.get('data', None)
                 #return(id_med)
                 return("""<script>
-                alert('Consulta desmarcada');
+                alert('Consulta {}}');
                 window.location.assign("/delete")
                 </script>
-                """)
+                """).format(med)
             else:
                 data = request.form.get('data')
                 data = str(data)
@@ -1039,7 +1043,7 @@ def delete():
                 read_med = Server.read_query(connection, readmedico)
                 med = str(read_med)
 
-                if med == "[(None,)]":
+                if med == "[(None,)]" or med == "":
                     #cod para caso a pessoa desmarcando a consulta seja um medico
                     readnome_pac = ("""
                     SELECT paciente FROM `{}` WHERE id_evento = '{}'
@@ -1115,10 +1119,10 @@ def delete():
                 data = session.get('data', None)
                 #return(id_med)
                 return("""<script>
-                alert('Consulta desmarcada');
+                alert('Consulta desmarcada com sucesso');
                 window.location.assign("/delete")
                 </script>
-                """)
+                """).format(d)
             else:
                 data = request.form.get('data')
                 data = str(data)
