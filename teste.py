@@ -1053,12 +1053,13 @@ def delete():
                 cadeventomed = ("""
                 INSERT INTO `{}` VALUES (NULL, '{}', '{}', '{}', '{}', NULL, '{}')
                 """).format(email, nome_eventomed, obs_evento, data_evento, hora_evento, paciente)
+                
+                
 
                 exc = Server.execute_query(connection, cadeventomed)
 
 
 
-                
                 return("""<script>
                 alert('Consulta cadastrada com sucesso, doutor{} {}');
                 window.location.assign("/delete")
