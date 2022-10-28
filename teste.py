@@ -29,7 +29,7 @@ def login():
         SELECT usermail FROM users WHERE usermail = '{}'
         """).format(email)
 
-        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+        connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
         exc = Server.read_query(connection, login)
         readmail = Server.read_query(connection, conlogin)
 
@@ -109,7 +109,7 @@ def cadastro():
         SELECT usermail FROM users
         """
 
-        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+        connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
         read = Server.read_query(connection, readdata)
 
         teste = """
@@ -179,7 +179,7 @@ def home():
     email = session.get('email', None)
     name = session.get('name', None)
 
-    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+    connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
     readsexo = ("""
     SELECT Sexo FROM users WHERE usermail = '{}' 
     """).format(email)
@@ -198,7 +198,7 @@ def home():
             data_mes = data[:-3][5:]
             data_dia = data[8:]
             data_br = (data_dia+"/"+data_mes)
-            connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+            connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
 
             readsexo = ("""
             SELECT Sexo FROM users WHERE usermail = '{}'
@@ -387,7 +387,7 @@ def home():
                 data_mes = data[:-3][5:]
                 data_dia = data[8:]
                 data_br = (data_dia+"/"+data_mes)
-                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+                connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
 
                 readsexo = ("""
                 SELECT Sexo FROM users WHERE usermail = '{}'
@@ -789,7 +789,7 @@ def logout():
 
 @app.route("/delete", methods =["GET", "POST"])
 def delete():
-    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+    connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
     email = session.get('email', None)
     varteste = session.get('varteste', None)
     if varteste == "pac":
@@ -1005,7 +1005,7 @@ def delete():
             submitdel = request.form.get('submitdel')
 
             if submitdel == "0K":
-                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10522353", "DAi1mTDqMz", "sql10522353")
+                connection = Server.create_db_connection("aws-sa-east-1.connect.psdb.cloud", "8coijqpibs4cdfxz4o7e", "pscale_pw_azeuGz1bBddo3oVR6DWiNIbwwbC7Zsvlssy6UeiNDVO", "proj-senac")
                 readsexo = ("""
                 SELECT Sexo FROM users WHERE usermail = '{}' 
                 """).format(email)
