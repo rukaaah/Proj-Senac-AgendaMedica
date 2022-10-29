@@ -2,11 +2,9 @@
 	Projeto desenvolvido como Projeto integrador do Senac MCR
 ----------------------------------------------------------------------------------
 Front-End(Login/Cadastro/DeleteMedico): Gustavo Benedet
-	INSTA:..
 	GITHUB:..
 
 Front-End(DeletePaciente): Jardel..
-	INSTA:..
 	GITHUB:..
 
 Back-End/Front-End(Homepage): Pedro Lucas de Souza Cremonini
