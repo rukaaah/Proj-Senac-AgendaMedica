@@ -1,18 +1,16 @@
 ----------------------------------------------------------------------------------
 	Projeto desenvolvido como Projeto integrador do Senac MCR
 ----------------------------------------------------------------------------------
+Front-End(Login/Cadastro/DeleteMedico): Gustavo Benedet
+	GITHUB:..
+
+Front-End(DeletePaciente): Jardel..
+	GITHUB:..
+
 Back-End/Front-End(Homepage): Pedro Lucas de Souza Cremonini
 	INSTA:@pedro_cremonini
 	GITHUB:rukaaah
 
-Front-End(Login/Cadastro/DeleteMedico): Gustavo Benedet
-	INSTA:
-	GITHUB:
-
-Front-End(DeletePaciente): Jardel..
-	INSTA:
-	GITHUB:
-----------------------------------------------------------------------------------
 					Anotações do Back-End
 		Com meu conhecimento atual eu mudaria mt coisa, provavelmente a primeira é que deixaria correspondente
 	ao PEP 8, tendo em vista que um dos meus principais problemas foi a bagunça que estava esse codigo, colocaria
