@@ -29,7 +29,7 @@ def login():
         SELECT usermail FROM users WHERE usermail = '{}'
         """).format(email)
 
-        connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
         exc = Server.read_query(connection, login)
         readmail = Server.read_query(connection, conlogin)
 
@@ -64,10 +64,10 @@ def login():
                 print(cara)
 
 
-                return ("""<script>
+                return("""<script>
                 window.location.assign("/homepage")
                 </script>
-                """).format(cara, perm)
+                """)
             else:
                 return ("""<script>
                 alert('A senha inserida esta incorreta');
@@ -79,7 +79,7 @@ def login():
                 alert('O email inserido está incorreto');
                 window.location.assign("/")
                 </script>
-                """).format(readmail)
+                """)
             
     return render_template("login.html")
 
@@ -109,7 +109,7 @@ def cadastro():
         SELECT usermail FROM users
         """
 
-        connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
         read = Server.read_query(connection, readdata)
 
         teste = """
@@ -179,7 +179,7 @@ def home():
     email = session.get('email', None)
     name = session.get('name', None)
 
-    connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
     readsexo = ("""
     SELECT Sexo FROM users WHERE usermail = '{}' 
     """).format(email)
@@ -198,7 +198,7 @@ def home():
             data_mes = data[:-3][5:]
             data_dia = data[8:]
             data_br = (data_dia+"/"+data_mes)
-            connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+            connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
 
             readsexo = ("""
             SELECT Sexo FROM users WHERE usermail = '{}'
@@ -387,7 +387,7 @@ def home():
                 data_mes = data[:-3][5:]
                 data_dia = data[8:]
                 data_br = (data_dia+"/"+data_mes)
-                connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
 
                 readsexo = ("""
                 SELECT Sexo FROM users WHERE usermail = '{}'
@@ -789,7 +789,7 @@ def logout():
 
 @app.route("/delete", methods =["GET", "POST"])
 def delete():
-    connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
     email = session.get('email', None)
     varteste = session.get('varteste', None)
     if varteste == "pac":
@@ -921,7 +921,7 @@ def delete():
                 alert('Consulta desmarcada com sucesso}');
                 window.location.assign("/delete")
                 </script>
-                """).format(med)
+                """)
             else:
                 data = request.form.get('data')
                 data = str(data)
@@ -1005,7 +1005,7 @@ def delete():
             submitdel = request.form.get('submitdel')
 
             if submitdel == "0K":
-                connection = Server.create_db_connection("sql10.freesqldatabase.com","sql10529985","pym5Gy4Wc2","sql10529985")
+                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
                 readsexo = ("""
                 SELECT Sexo FROM users WHERE usermail = '{}' 
                 """).format(email)
