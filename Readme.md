@@ -1,8 +1,7 @@
 
 # Agenda Medica Projeto Integrador
 
-Agenda voltada para juntar mais pacientes e medicos de um jeito mais dinamico
-
+Agenda voltada para juntar mais pacientes e medicos de um jeito mais dinamico (Com envio de e-mail ao medico/paciente ao desmarcar consultas e sistema proprio de salvar consultas)
 
 
 ## Autores
