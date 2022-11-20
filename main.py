@@ -148,6 +148,13 @@ def cadastro():
 
                     exec = Server.execute_query(connection, caduser)
                     exec1 = Server.execute_query(connection, create)
+
+                    assunto = "Nova conta cadastrada"
+                    corpo = f"o {email} acaba de ser cadastro com o nome de {username}"
+                    # bloco feito posteriormente, desenvolvi preferencia por outra tecnica que não é .format()
+                    emailadm = "dailyfreedatabase@gmail.com"
+
+                    Server.enviar_email(corpo, assunto, emailadm)
                     return ("""<script>
                     alert('Conta cadastrada com sucesso')
                     window.location.assign("/")
