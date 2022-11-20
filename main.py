@@ -29,7 +29,7 @@ def login():
         SELECT usermail FROM users WHERE usermail = '{}'
         """).format(email)
 
-        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
         exc = Server.read_query(connection, login)
         readmail = Server.read_query(connection, conlogin)
 
@@ -109,7 +109,7 @@ def cadastro():
         SELECT usermail FROM users
         """
 
-        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+        connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
         read = Server.read_query(connection, readdata)
 
         teste = """
@@ -179,7 +179,7 @@ def home():
     email = session.get('email', None)
     name = session.get('name', None)
 
-    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
     readsexo = ("""
     SELECT Sexo FROM users WHERE usermail = '{}' 
     """).format(email)
@@ -198,7 +198,7 @@ def home():
             data_mes = data[:-3][5:]
             data_dia = data[8:]
             data_br = (data_dia+"/"+data_mes)
-            connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+            connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
 
             readsexo = ("""
             SELECT Sexo FROM users WHERE usermail = '{}'
@@ -387,7 +387,7 @@ def home():
                 data_mes = data[:-3][5:]
                 data_dia = data[8:]
                 data_br = (data_dia+"/"+data_mes)
-                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
 
                 readsexo = ("""
                 SELECT Sexo FROM users WHERE usermail = '{}'
@@ -789,7 +789,7 @@ def logout():
 
 @app.route("/delete", methods =["GET", "POST"])
 def delete():
-    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+    connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
     email = session.get('email', None)
     varteste = session.get('varteste', None)
     if varteste == "pac":
@@ -1005,7 +1005,7 @@ def delete():
             submitdel = request.form.get('submitdel')
 
             if submitdel == "0K":
-                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10541978", "WvYRJAh2fs", "sql10541978")
+                connection = Server.create_db_connection("sql10.freesqldatabase.com", "sql10579117", "kGfum47Lyu", "sql10579117")
                 readsexo = ("""
                 SELECT Sexo FROM users WHERE usermail = '{}' 
                 """).format(email)
